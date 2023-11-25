@@ -1,0 +1,13 @@
+.Style {
+  width: 45%;
+  max-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.Collapsible {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 8px;
+}
