@@ -15,23 +15,13 @@ const headerStyle = {
   margin: "20px",
 };
 
-const innerDiv_style = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  margin: "10px 45px 0px",
-  // maxHeight: "calc(100vh - 72px)",
-};
-
 function App() {
   return (
     <div className="App" style={App_style}>
       <header style={headerStyle}>
         <h1>Resume Builder</h1>
       </header>
-      <div className="innerDiv" style={innerDiv_style}>
-        <Editor />
-      </div>
+      <Editor />
     </div>
   );
 }

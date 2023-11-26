@@ -6,6 +6,8 @@ import RightPanel from "../RightPanel";
 import { Resume, emptyResume, emptyResumeArray } from "../../data/resume";
 import { ResumeActions } from "../../data/actions";
 
+import styles from "./index.module.css";
+
 export const Editor = () => {
   const [resume, disptch] = useImmerReducer<Resume, ResumeActions>(
     (draft, action) => {
@@ -43,9 +45,9 @@ export const Editor = () => {
   );
 
   return (
-    <>
+    <div className={styles.Div}>
       <LeftPanel resume={resume} dispatch={disptch} />
       <RightPanel resume={resume} />
-    </>
+    </div>
   );
 };

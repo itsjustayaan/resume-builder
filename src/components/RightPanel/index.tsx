@@ -8,9 +8,10 @@ import styles from "./index.module.css";
 function RightPanel(props: { resume: Resume }) {
   return (
     <div className={styles.Div}>
-      <Paper elevation={6} sx={styles.Paper}>
+      <div className={styles.Paper}>
         {/* {JSON.stringify(props.resume, null, 2)} */}
-      </Paper>
+        gdfgdfgdfg
+      </div>
     </div>
   );
 }
