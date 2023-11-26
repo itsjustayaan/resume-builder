@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const box_style = {
@@ -39,7 +39,11 @@ const expanded_style = {
   overflowY: "auto",
 };
 
-function Collapsible(props) {
+function Collapsible(props: {
+  name: string;
+  className?: string;
+  children: React.JSX.Element[] | React.JSX.Element;
+}) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleCollapse = () => {
@@ -57,13 +61,13 @@ function Collapsible(props) {
 
   return (
     <>
-      <div style={box_style}>
-        <div style={innerBox_style}>
+      <div style={box_style as any}>
+        <div style={innerBox_style as any}>
           {props.name}
           {<ExpandMoreIcon sx={iconRotationStyle} onClick={toggleCollapse} />}
         </div>
       </div>
-      <div style={currentStyle}>
+      <div style={currentStyle as any}>
         <div className={props.className}>{props.children}</div>
       </div>
     </>

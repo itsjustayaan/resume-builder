@@ -1,5 +1,4 @@
-import LeftPanel from "./components/LeftPanel";
-import RightPanel from "./components/RightPanel";
+import { Editor } from "./components/Editor";
 
 const App_style = {
   display: "flex",
@@ -13,14 +12,14 @@ const headerStyle = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
-  margin: "20px"
+  margin: "20px",
 };
 
 const innerDiv_style = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "space-between",
-  margin: "10px 45px 0px" ,
+  margin: "10px 45px 0px",
   // maxHeight: "calc(100vh - 72px)",
 };
 
@@ -31,8 +30,7 @@ function App() {
         <h1>Resume Builder</h1>
       </header>
       <div className="innerDiv" style={innerDiv_style}>
-        <LeftPanel />
-        <RightPanel />
+        <Editor />
       </div>
     </div>
   );

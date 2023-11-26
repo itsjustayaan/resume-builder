@@ -7,3 +7,11 @@
   overflow-y: auto;
   padding: 50px 0;
 }
+
+.Paper {
+  min-height: 279mm;
+  max-height: 279mm;
+  width: 216mm;
+  display: flex;
+  align-items: flex-start;
+}
