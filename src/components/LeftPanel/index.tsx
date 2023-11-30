@@ -14,15 +14,25 @@ function LeftPanel(props: {
 }) {
   return (
     <div className={styles.Style}>
-      {Object.entries(props.resume).map(([key, value]) => (
-        <Collapsible name={key} key={key} className={styles.Collapsible}>
-          <InputsGroup
-            fields={value}
-            dispatch={props.dispatch}
-            object={key as Parameters<typeof InputsGroup>[0]["object"]}
-          />
-        </Collapsible>
-      ))}
+      {Object.entries(props.resume).map(([key, value]) =>
+        !Array.isArray(value) ? (
+          <Collapsible name={key} key={key} className={styles.Collapsible}>
+            <InputsGroup
+              fields={value}
+              dispatch={props.dispatch}
+              object={key as Parameters<typeof InputsGroup>[0]["object"]}
+            />
+          </Collapsible>
+        ) : (
+          <Collapsible name={key} key={key}>
+            <InputsGroup
+              fields={value}
+              dispatch={props.dispatch}
+              object={key as Parameters<typeof InputsGroup>[0]["object"]}
+            />
+          </Collapsible>
+        )
+      )}
     </div>
   );
 }
@@ -49,18 +59,8 @@ function InputsGroup<Type = "mutate" | "mutate-array">({
 
   return (
     <>
-      <button
-        onClick={() =>
-          dispatch({
-            name: "add",
-            value: { path: object as keyof ResumeArray },
-          })
-        }
-      >
-        Add
-      </button>
       {fields.map((fields, i) => (
-        <>
+        <Collapsible name={fields.Name} className={styles.InnerCollapsible}>
           <Inputs
             fields={fields}
             dispatch={dispatch}
@@ -78,8 +78,18 @@ function InputsGroup<Type = "mutate" | "mutate-array">({
           >
             Delete
           </button>
-        </>
+        </Collapsible>
       ))}
+      <button
+        onClick={() =>
+          dispatch({
+            name: "add",
+            value: { path: object as keyof ResumeArray },
+          })
+        }
+      >
+        Add
+      </button>
     </>
   );
 }

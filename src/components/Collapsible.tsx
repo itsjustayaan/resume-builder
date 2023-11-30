@@ -34,8 +34,6 @@ const collapsed_style = {
 
 const expanded_style = {
   transition: "min-height .5s ease-out",
-  minHeight: "300px",
-  maxHeight: "300px",
   overflowY: "auto",
 };
 

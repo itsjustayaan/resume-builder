@@ -9,11 +9,23 @@ function Input(props: {
 }) {
   return (
     <div className={styles.Input}>
-      <label>{props.label}</label>
-      <input
-        value={props.value}
-        onChange={(e) => props.setValue(e.target.value)}
-      />
+      {props.label == "Description" ? (
+        <>
+          <label>{props.label}</label>
+          <textarea
+            value={props.value}
+            onChange={(e) => props.setValue(e.target.value)}
+          />
+        </>
+      ) : (
+        <>
+          <label>{props.label}</label>
+          <input
+            value={props.value}
+            onChange={(e) => props.setValue(e.target.value)}
+          />
+        </>
+      )}
     </div>
   );
 }

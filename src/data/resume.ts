@@ -1,114 +1,117 @@
 export type Resume = ResumeFlat & ResumeArray;
 
 export type ResumeFlat = {
-  personal: Personal;
-  skillset: Skillset;
+  Personal: Personal;
+  Skillsets: Skillsets;
 };
 
 export type ResumeArray = {
-  experience: Experience[];
-  education: Education[];
-  projects: Project[];
-  certifications: Certification[];
+  Education: Education[];
+  Experience: Experience[];
+  Projects: Project[];
+  Certifications: Certification[];
 };
 
 export const emptyResumeArray: {
-  experience: Experience;
-  education: Education;
-  projects: Project;
-  certifications: Certification;
+  Education: Education;
+  Experience: Experience;
+  Projects: Project;
+  Certifications: Certification;
 } = {
-  experience: {
-    employer: "",
-    title: "",
-    location: "",
-    description: "",
-    startDate: new Date(),
-    endDate: new Date(),
+  Education: {
+    Name: "",
+    Location: "",
+    Degree: "",
+    Field: "",
+    Score: 0,
+    StartDate: "",
+    EndDate: "",
   },
-  education: {
-    institute: "",
-    location: "",
-    degree: "",
-    field: "",
-    score: 0,
-    startDate: new Date(),
-    endDate: new Date(),
+  Experience: {
+    Name: "",
+    Title: "",
+    Location: "",
+    Description: "",
+    StartDate: "",
+    EndDate: "",
   },
-  projects: {
-    title: "",
-    technologies: "",
-    link: "",
-    description: "",
+
+  Projects: {
+    Name: "",
+    Technologies: "",
+    Link: "",
+    Description: "",
   },
-  certifications: {
-    title: "",
-    link: "",
-    issuer: "",
+  Certifications: {
+    Name: "",
+    Link: "",
+    Issuer: "",
   },
 };
 
 export const emptyResume: Resume = Object.freeze({
-  personal: {
-    name: "",
-    email: "",
-    number: "",
-    linkedin: "",
-    portfolio: "",
+  Personal: {
+    Name: "",
+    Email: "",
+    Number: "",
+    Linkedin: "",
+    Github: "",
+    Portfolio: "",
   },
-  experience: [],
-  education: [],
-  projects: [],
-  skillset: {
-    languages: "",
-    libraries: "",
-    tools: "",
+  Education: [],
+  Experience: [],
+  Projects: [],
+  Skillsets: {
+    Languages: "",
+    Libraries: "",
+    Tools: "",
   },
-  certifications: [],
+  Certifications: [],
 });
 
 export type Personal = {
-  name: string;
-  email: string;
-  number: string;
-  linkedin: string;
-  portfolio: string;
+  Name: string;
+  Email: string;
+  Number: string;
+  Linkedin: string;
+  Github: string;
+  Portfolio: string;
 };
 
 export type Experience = {
-  employer: string;
-  title: string;
-  location: string;
-  description: string;
-  startDate: Date;
-  endDate: Date;
+  Name: string;
+  Title: string;
+  Location: string;
+  Description: string;
+  StartDate: string;
+  EndDate: string;
 };
 
 export type Education = {
-  institute: string;
-  location: string;
-  degree: string;
-  field: string;
-  score: number;
-  startDate: Date;
-  endDate: Date;
+  Name: string;
+  Location: string;
+  Degree: string;
+  Field: string;
+  Score: number;
+  StartDate: string;
+  EndDate: string;
 };
 
 export type Project = {
-  title: string;
-  technologies: string;
-  link: string;
-  description: string;
+  Name: string;
+  Technologies: string;
+  Link: string;
+  Description: string;
 };
 
-export type Skillset = {
-  languages: string;
-  libraries: string;
-  tools: string;
+export type Skillsets = {
+  Languages: string;
+  Libraries: string;
+  Tools: string;
 };
 
 export type Certification = {
-  title: string;
-  link: string;
-  issuer: string;
+  Name: string;
+  Link: string;
+  Issuer: string;
 };
