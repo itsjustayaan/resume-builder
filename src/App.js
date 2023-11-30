@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import { Editor } from "./components/Editor";
 
 const App_style = {
@@ -16,12 +18,15 @@ const headerStyle = {
 };
 
 function App() {
+  const [signal, setSignal] = useState(0);
+
   return (
     <div className="App" style={App_style}>
       <header style={headerStyle}>
         <h1>Resume Builder</h1>
+        <button onClick={() => setSignal(signal + 1)}>Print</button>
       </header>
-      <Editor />
+      <Editor signal={signal} />
     </div>
   );
 }

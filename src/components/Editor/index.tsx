@@ -8,7 +8,7 @@ import { ResumeActions } from "../../data/actions";
 
 import styles from "./index.module.css";
 
-export const Editor = () => {
+export const Editor = (props: { signal: number }) => {
   const [resume, disptch] = useImmerReducer<Resume, ResumeActions>(
     (draft, action) => {
       switch (action.name) {
@@ -47,7 +47,7 @@ export const Editor = () => {
   return (
     <div className={styles.Div}>
       <LeftPanel resume={resume} dispatch={disptch} />
-      <RightPanel resume={resume} />
+      <RightPanel resume={resume} signal={props.signal} />
     </div>
   );
 };
